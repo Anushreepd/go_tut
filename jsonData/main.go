@@ -22,6 +22,9 @@ func main() {
 
 	//umarshal
 	var person2 Person
-	err := json.Unmarshal(json_marshal)
-
+	error := json.Unmarshal(json_marshal, &person2)
+	if error != nil {
+		fmt.Println("error while unmarshaling data")
+	}
+	fmt.Println("json Unmarshal data", person2)
 }
